@@ -1,21 +1,25 @@
 #include <stdio.h>
 
-void swap(int *, int *); //a <-> b
+typedef struct {
+    float x;
+    float y;
+}Vector_2d;
 
-int main() {
-    int a_en_main = 12;
-    int b_en_main = -5;
+void square_vector(Vector_2d *);
 
-    swap(&a_en_main,&b_en_main); //Hace referencia a las direcciones de memoria
+int main(void)
+{
+    Vector_2d mi_vector_chilo = {5, 6.0};
 
-    printf("%d %d\n",a_en_main,b_en_main);
+    square_vector(&mi_vector_chilo);
 
+    printf("%f %f", mi_vector_chilo.x, mi_vector_chilo.y);
     return 0;
 }
 
-void swap(int *a, int *b)
+void square_vector(Vector_2d *vector)
 {
-    int pivote = *a; //Obtener valor de la direccion
-    *a = *b;//Obtener valor de la direccion
-    *b = pivote; //Obtener valor de la direccion
+    (*vector).x = (*vector).x * (*vector).x; //importante los parentesis para obtener el valor de dereferencia
+//    vector->x = vector->x * vector->x; Es una simplificacion de las referencias
+    (*vector).y = (*vector).y * (*vector).y;
 }

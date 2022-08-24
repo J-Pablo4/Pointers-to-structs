@@ -9,7 +9,7 @@ void square_vector(Vector_2d *);
 
 int main(void)
 {
-    Vector_2d mi_vector_chilo = {5, 6.0};
+    Vector_2d mi_vector_chilo = {5, 6};
 
     printf("desde main: %p\n", &mi_vector_chilo);
 

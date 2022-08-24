@@ -20,6 +20,6 @@ int main(void)
 void square_vector(Vector_2d *vector)
 {
     (*vector).x = (*vector).x * (*vector).x; //importante los parentesis para obtener el valor de dereferencia
-//    vector->x = vector->x * vector->x; Es una simplificacion de las referencias
+//    vector->x = vector->x * vector->x; Es una simplificacion de las referencias. Solo funciona a apuntadores de structs.
     (*vector).y = (*vector).y * (*vector).y;
 }
